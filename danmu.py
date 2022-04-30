@@ -38,7 +38,7 @@ class bilibiliDM:
             self.parseDM(recv_text)
 
     def JsonToHex(self):
-        data=json.dumps(self.info).replace(' ','').encode()
+        data=json.dumps(self.info).encode()
         headerLen=hex(16+len(data))[2:]
         raw=binascii.hexlify(data).decode()
         self.data_raw=self.data_raw.format(headerLen=headerLen,raw=raw) 
